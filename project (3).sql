@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 13, 2023 at 10:01 AM
+-- Generation Time: Oct 20, 2023 at 09:50 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -31,17 +31,18 @@ DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `category_id` int NOT NULL AUTO_INCREMENT,
   `category_name` varchar(15) NOT NULL,
+  `img` varchar(1000) NOT NULL,
   PRIMARY KEY (`category_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `category`
 --
 
-INSERT INTO `category` (`category_id`, `category_name`) VALUES
-(1, 'plumbers'),
-(2, 'welder'),
-(3, 'Electrician');
+INSERT INTO `category` (`category_id`, `category_name`, `img`) VALUES
+(13, 'elctritician', '2ad64c3d0c9c5d757145db6c7fcaa817_dd246bac258c6db696.jpg'),
+(12, 'plumbers', '08d38d99b300773d06d7a9516780d7db_13ad70d7f1cd56a549.jpg'),
+(14, 'welder', 'e73c2f1e36c4b1b7c4dea5ba82e4568e_3d9eed3a1084.jpg');
 
 -- --------------------------------------------------------
 
@@ -54,22 +55,18 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `eid` int NOT NULL AUTO_INCREMENT,
   `ename` varchar(25) NOT NULL,
   `eage` int NOT NULL,
-  `job` varchar(10) NOT NULL,
-  `address` varchar(50) NOT NULL,
-  `ephone` int NOT NULL,
-  `certificate` varchar(200) NOT NULL,
-  `profilep` varchar(200) NOT NULL,
-  `password` varchar(15) NOT NULL,
+  `eimage` varchar(1000) NOT NULL,
   PRIMARY KEY (`eid`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`eid`, `ename`, `eage`, `job`, `address`, `ephone`, `certificate`, `profilep`, `password`) VALUES
-(1, 'dona', 18, '', '', 2147483647, '', '', ''),
-(2, 'kkk', 18, '', '', 2147483647, '', '', '');
+INSERT INTO `employee` (`eid`, `ename`, `eage`, `eimage`) VALUES
+(1, 'dona', 18, ''),
+(2, 'kkk', 18, ''),
+(3, 'jack', 12, 'c0face40d465fa6685bff6e36a992229_dd15776774ded27.jpg');
 
 -- --------------------------------------------------------
 
