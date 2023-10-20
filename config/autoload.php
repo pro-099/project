@@ -9,8 +9,8 @@ define("BASE_PATH","c:wamp64/www/project/");
 date_default_timezone_set('asia/kolkata');
 
 
-
-  
+ 
+ 
 
  session_start();
  require(BASE_PATH.'config/database.php'); 
