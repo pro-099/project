@@ -19,7 +19,7 @@ if(isset($_POST['signin']))
 		{
 		$_SESSION['uname']=$info['uname'];
         echo "<script> alert('Login success');</script>";
-		//header('location:user_index.php');
+		header('location:index.php');
 		}
 		else
 		{
