@@ -10,7 +10,7 @@
    <div class="container py-5">
        <div class="row align-items-center py-4">
            <div class="col-md-6 text-center text-md-left">
-               <h1 class="mb-4 mb-md-0 text-primary text-uppercase">ITEMS</h1>
+               <h1 class="mb-4 mb-md-0 text-primary text-uppercase">WORKS</h1>
            </div>
            <div class="col-md-6 text-center text-md-right">
                <div class="d-inline-flex align-items-center">
@@ -29,8 +29,8 @@
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 col text-center mb-4">
-                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">ITEMS</h6>
-                    <h1 class="mb-4">Our Items Lineup</h1>
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">WORKS</h6>
+                    <h1 class="mb-4">Our Works Lineup</h1>
                 </div>
             </div>
     
@@ -49,8 +49,8 @@
 
             <div class="row mx-1 portfolio-container">
             <?php
-               $cid=$_GET['id'];
-              $q="select * from category where status=1 and sid=".$cid;
+               //$cid=$_GET['id'];
+              $q="select * from category";
 
               $info=$dao->query($q);
               //print_r($info);
@@ -60,28 +60,28 @@
               //{
               while($i<count($info))
 
-              { $s=$info[$i]["cimage"];
+              { $s=$info[$i]["img"];
 
   ?>
                
                 <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
                     <div class="position-relative overflow-hidden">
                         <div class="portfolio-img d-flex align-items-center justify-content-center">
-                            <img class="img-fluid" src=<?php echo BASE_URL."upload/".$info[$i]["cimage"]; ?> alt="">
+                            <img class="img-fluid" src=<?php echo BASE_URL."uploads/".$info[$i]["img"]; ?> alt="">
                         </div>
                         <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
-                            <h4 class="text-white mb-4">Item Name : <?php echo $info[$i]["cname"]?></h4>
+                            <h4 class="text-white mb-4">Item Name : <?php echo $info[$i]["category_name"]?></h4>
                             <div class="d-flex align-items-center justify-content-center">
                                 
 
-                                <a class="btn btn-outline-primary m-1" href="singlecategory.php?id=<?=$info[$i]["cid"]?>">
+                                <a class="btn btn-outline-primary m-1" href="singlecategory.php?id=<?=$info[$i]["category_id"]?>">
                                 <i class="fa fa-link"></i>
                                 </a>
                                 
                             </div>
                         </div>
                     </div>
-                    <h4><?php echo $info[$i]["cname"]?></h4> </a>
+                    <h4><?php echo $info[$i]["category_name"]?></h4> </a>
                 </div>
                 
                 <?php

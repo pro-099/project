@@ -80,7 +80,7 @@ $dao=new DataAccess();
                     <div class="navbar-nav ml-auto py-0">
                         <a href="index.php" class="nav-item nav-link active">Home</a>
                         <a href="about.php" class="nav-item nav-link">About</a>
-                        <a href="products.php" class="nav-item nav-link">Services</a>
+                        <a href="displaycategory.php" class="nav-item nav-link">Services</a>
 
                         <a href="viewcart.php" class="nav-item nav-link">Bookings</a>
                         <div class="nav-item dropdown">
