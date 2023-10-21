@@ -74,7 +74,7 @@
                             <div class="d-flex align-items-center justify-content-center">
                                 
 
-                                <a class="btn btn-outline-primary m-1" href="list.php?id=<?=$info[$i]["category_id"]?>">
+                                <a class="btn btn-outline-primary m-1" href="displayemployee.php?id=<?=$info[$i]["category_name"]?>">
                                <i class="fa fa-link"></i>
                                 </a>
                                 
