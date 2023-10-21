@@ -1,4 +1,8 @@
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
 <?php require('../config/autoload.php'); ?>
 
 <?php
@@ -18,7 +22,12 @@ $dao=new DataAccess();
                     <tr>
                         
                         <th>Id</th>
+<<<<<<< HEAD
                         <th>category name</th>                        
+=======
+                        <th>category name</th>
+                        
+>>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
                         <th>EDIT/DELETE</th>
                      
                       
@@ -28,7 +37,11 @@ $dao=new DataAccess();
     $actions=array(
     'edit'=>array('label'=>'Edit','link'=>'edit.php','params'=>array('id'=>'category_id'),'attributes'=>array('class'=>'btn btn-success')),
     
+<<<<<<< HEAD
     'delete'=>array('label'=>'Delete','link'=>'editing.php','params'=>array('id'=>'category_id'),'attributes'=>array('class'=>'btn btn-success'))
+=======
+    'delete'=>array('label'=>'Delete','link'=>'edit.php','params'=>array('id'=>'category_id'),'attributes'=>array('class'=>'btn btn-success'))
+>>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
     
     );
 
@@ -45,7 +58,11 @@ $dao=new DataAccess();
     );
      $fields=array('category_id','category_name');
 
+<<<<<<< HEAD
     $users=$dao->selectAsTable($fields,'category',"status=1",$join,$actions,$config);
+=======
+    $users=$dao->selectAsTable($fields,'category',1,$join,$actions,$config);
+>>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
     
     echo $users;
                     

@@ -12,6 +12,15 @@
            <div class="col-md-6 text-center text-md-left">
                <h1 class="mb-4 mb-md-0 text-primary text-uppercase">WORKS</h1>
            </div>
+           <div class="col-md-6 text-center text-md-right">
+               <div class="d-inline-flex align-items-center">
+                   <a class="btn btn-outline-primary" href="index.php">Home</a>
+                   <i class="fas fa-angle-double-right text-primary mx-2"></i>
+                   <a class="btn btn-outline-primary" href="products.php">Products</a>
+                   <i class="fas fa-angle-double-right text-primary mx-2"></i>
+                   <a class="btn btn-outline-primary disabled" href="">Items</a>
+               </div>
+           </div>
        </div>
    </div>
 </div>
@@ -40,8 +49,8 @@
 
             <div class="row mx-1 portfolio-container">
             <?php
-              // $cid=$_GET['id'];
-              $q="select * from category ";
+               //$cid=$_GET['id'];
+              $q="select * from category";
 
               $info=$dao->query($q);
               //print_r($info);
@@ -65,8 +74,8 @@
                             <div class="d-flex align-items-center justify-content-center">
                                 
 
-                                <a class="btn btn-outline-primary m-1" href="singlecategory.php?id=<?=$info[$i]["category_id"]?>">
-                                <i class="fa fa-link"></i>
+                                <a class="btn btn-outline-primary m-1" href="list.php?id=<?=$info[$i]["category_id"]?>">
+                               <i class="fa fa-link"></i>
                                 </a>
                                 
                             </div>

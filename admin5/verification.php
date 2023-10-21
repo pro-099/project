@@ -1,4 +1,8 @@
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
 <?php require('../config/autoload.php'); ?>
 
 <?php
@@ -18,9 +22,16 @@ $dao=new DataAccess();
                     <tr>
                         
                         <th>Id</th>
+<<<<<<< HEAD
                         <th>category name</th>                        
                         <th>EDIT/DELETE</th>
                      
+=======
+                        <th>Employee name</th>
+                        <th>Employee age</th>
+                        <th>EDIT/DELETE</th>
+                        <th>Verify Employee</th>
+>>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
                       
                     </tr>
 <?php
@@ -28,13 +39,21 @@ $dao=new DataAccess();
     $actions=array(
     'edit'=>array('label'=>'Edit','link'=>'edit.php','params'=>array('id'=>'category_id'),'attributes'=>array('class'=>'btn btn-success')),
     
+<<<<<<< HEAD
     'delete'=>array('label'=>'Delete','link'=>'editing.php','params'=>array('id'=>'category_id'),'attributes'=>array('class'=>'btn btn-success'))
+=======
+    'delete'=>array('label'=>'Delete','link'=>'edit.php','params'=>array('id'=>'category_id'),'attributes'=>array('class'=>'btn btn-success'))
+>>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
     
     );
 
     $config=array(
         'srno'=>true,
+<<<<<<< HEAD
         'hiddenfields'=>array('category_id'),
+=======
+        'hiddenfields'=>array('eid'),
+>>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
         
         
     );
@@ -43,9 +62,15 @@ $dao=new DataAccess();
    $join=array(
         
     );
+<<<<<<< HEAD
      $fields=array('category_id','category_name');
 
     $users=$dao->selectAsTable($fields,'category',"status=1",$join,$actions,$config);
+=======
+     $fields=array('eid','ename');
+
+    $users=$dao->selectAsTable($fields,'employee',1,$join,$actions,$config);
+>>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
     
     echo $users;
                     

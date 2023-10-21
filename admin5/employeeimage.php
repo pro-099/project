@@ -1,7 +1,11 @@
 <?php 
 
  require('../config/autoload.php'); 
+<<<<<<< HEAD
 include("header.php");
+=======
+include("oghead.php");
+>>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
 
 $file=new FileUpload();
 $elements=array(

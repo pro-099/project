@@ -10,9 +10,9 @@ date_default_timezone_set('asia/kolkata');
 
 
 
-
-
- session_start();
+ 
+ 
+session_start();
  require(BASE_PATH.'config/database.php'); 
  require( BASE_PATH .'classes/database.php'); 
  require( BASE_PATH .'classes/FormAssist.class.php'); 
