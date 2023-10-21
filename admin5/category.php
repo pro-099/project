@@ -72,7 +72,7 @@ echo $file->errors();
 </head>
 <body>
 
- <form action="" method="POST" enctype="multipart/form-data">
+ <form  method="POST" >
 
 <div class="row">
                     <div class="col-md-6">

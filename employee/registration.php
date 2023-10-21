@@ -1,6 +1,7 @@
 <?php require('../config/autoload.php'); ?>
 <?php  //include('header.php'); ?>   
 <?php
+$file=new FileUpload();
 $dao=new DataAccess();
 $rules=array(
     'emp_id'=>array("required"=>true),
@@ -8,50 +9,67 @@ $rules=array(
     'ephone'=>array("required"=>true),
     'designation'=>array("required"=>true),
     'password'=>array("required"=>true),
-	
+    'img'=>array("filerequired"=>true)
+
 );
-$labels=array('emp_id'=>"EMAIL",'ename'=>"NAME",'ephone'=>"PHONE",'designation'=>"DESIGNATION",'password'=>"PAASWORD");
-$validator=new FormValidator($rules);
+$labels=array('emp_id'=>"EMAIL",'ename'=>"NAME",'ephone'=>"PHONE",'designation'=>"DESIGNATION",'password'=>"PAASWORD",'img'=>"IMAGE");
+
 $elements=array(
     
     'emp_id' =>'',
 	'ename'=>'',
 	'ephone' =>'',
     'designation' =>'',
-	'password'=>''
+	'password'=>'',
+    'img'=>''
     
 
    
     
 	);
-$form = new FormAssist($elements,$_POST);
-
-if(isset($_POST['signup']))
+$validator = new FormValidator($rules);
+$form=new FormAssist($elements,$_POST);
+if(isset($_POST["signup"]))
 {
-	if($validator->validate($_POST))
-	{
-	$data=array(
-        'emp_id'=>$_POST['emp_id'],
-        'ename'=>$_POST['ename'],
-        'ephone'=>$_POST['ephone'],
-        'designation'=>$_POST['designation'],
-        'password'=>$_POST['password']
   
-		);
-		$table='empreg';
-		if($dao->insert($data,$table))
-        {
-        	//$msg="Registered successfully";
-		echo "<script> alert('New record created successfully');</script> ";
-		
-		}
-		
-		else
-			echo "<script> alert('Something went wrong');</script> ";
-		//$msg="error";
-	//	header('location:index.php');	
-	}
+if($validator->validate($_POST))
+{ 
+    if($fileName=$file->doUploadRandom($_FILES['img'],array('.jpg','.png','.jpeg'),100000,1,'../uploads'))	
+    {
+
+$data=array(
+
+    'emp_id'=>$_POST['emp_id'],
+    'ename'=>$_POST['ename'],
+    'ephone'=>$_POST['ephone'],
+    'designation'=>$_POST['designation'],
+    'password'=>$_POST['password'],
+    'img'=>$fileName
+        
+         
+    );
+
+    print_r($data);
+  
+    if($dao->insert($data,"empreg"))
+    {
+        echo "<script> alert('New record created successfully');</script> ";
+
+    }
+    else
+        {$msg="Registration failed";} ?>
+
+
+<?php
+    
 }
+else
+echo $file->errors();
+}
+
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +95,7 @@ if(isset($_POST['signup']))
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">DETAILS</h2>
-                        <form method="POST" class="register-form" id="register-form">
+                        <form method="POST" enctype="multipart/form-data" class="register-form" id="register-form">
                             <div class="form-group">
                                <!-- <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="name" id="name" placeholder="Your Name"/>--><h5>EMPLOYEE ID:<?php echo $form->textBox('emp_id'); ?> </h5>
@@ -107,7 +125,16 @@ if(isset($_POST['signup']))
                             <?= $validator->error('designation'); ?>
 
                             </div>
-                           
+                            <div class="row">
+                    <div class="col-md-6">
+
+                category image:
+
+             <?= $form->fileField('img',array('class'=>'form-control')); ?>
+             <?= $validator->error('img'); ?>
+
+            </div>
+             </div> 
 
 
                             <div class="form-group">
@@ -121,7 +148,7 @@ if(isset($_POST['signup']))
                                 <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
                             </div>-->
                             <div class="form-group">
-                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" /> 
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                             </div>
                             <div class="form-group form-button">
@@ -135,6 +162,7 @@ if(isset($_POST['signup']))
                         <a href="login.php" class="signup-image-link">I am already member</a><a href="index.php" class="signup-image-link">Back to Home</a>
                     </div>
                 </div>
+
             </div>
         </section>
         </div>
@@ -196,3 +224,7 @@ if(isset($_POST['signup']))
     </body>
 </html>-->
  <?php //include('footer.php'); ?>
+
+
+
+ 

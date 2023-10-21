@@ -74,8 +74,8 @@
                             <div class="d-flex align-items-center justify-content-center">
                                 
 
-                                <a class="btn btn-outline-primary m-1" href="singlecategory.php?id=<?=$info[$i]["category_id"]?>">
-                                <i class="fa fa-link"></i>
+                                <a class="btn btn-outline-primary m-1" href="list.php?id=<?=$info[$i]["category_id"]?>">
+                               <i class="fa fa-link"></i>
                                 </a>
                                 
                             </div>
