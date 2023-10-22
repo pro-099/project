@@ -34,7 +34,7 @@ if(isset($_POST["signup"]))
   
 if($validator->validate($_POST))
 { 
-    if($fileName=$file->doUploadRandom($_FILES['img'],array('.jpg','.png','.jpeg'),100000,1,'../uploads'))	
+    if($fileName=$file->doUploadRandom($_FILES['img'],array('.jpg','.png','.jpeg','.avif'),100000,1,'../uploads'))	
     {
 
 $data=array(
@@ -44,12 +44,12 @@ $data=array(
     'ephone'=>$_POST['ephone'],
     'designation'=>$_POST['designation'],
     'password'=>$_POST['password'],
-    'img'=>$fileName
-        
+    'img'=>$fileName,
+     'status'=>1   
          
     );
 
-    print_r($data);
+    //print_r($data);
   
     if($dao->insert($data,"empreg"))
     {
@@ -140,7 +140,7 @@ echo $file->errors();
                             <div class="form-group">
                                <!-- <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>-->			<h5>PASSWORD</h5>
-			<td><input type="text" name="password" /></td>
+			<td><input type="password" name="password" /></td>
 			<td> <?php echo $validator->error('password'); ?> </td>
                             </div>
                            <!-- <div class="form-group">

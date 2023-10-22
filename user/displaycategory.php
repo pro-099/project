@@ -75,7 +75,8 @@
                                 
 
                                 <a class="btn btn-outline-primary m-1" href="displayemployee.php?id=<?=$info[$i]["category_name"]?>">
-                               <i class="fa fa-link"></i>
+                              <!-- <i class="fa fa-link"></i>-->
+                              <button style=" background-color:#d4700d;border: none;color: gold;font-size: 16px;cursor: pointer;">SELECT</button>
                                 </a>
                                 
                             </div>

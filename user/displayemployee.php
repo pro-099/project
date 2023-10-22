@@ -10,7 +10,7 @@
    <div class="container py-5">
        <div class="row align-items-center py-4">
            <div class="col-md-6 text-center text-md-left">
-               <h1 class="mb-4 mb-md-0 text-primary text-uppercase">ITEMS</h1>
+          <h1 class="mb-4 mb-md-0 text-primary text-uppercase"><?php $w=$_GET['id'];echo$w ?></h1>
            </div>
            <div class="col-md-6 text-center text-md-right">
                <div class="d-inline-flex align-items-center">
@@ -29,8 +29,8 @@
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 col text-center mb-4">
-                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">ITEMS</h6>
-                    <h1 class="mb-4">Our Items Lineup</h1>
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3"><?php $w=$_GET['id'];echo$w ?></h6>
+                    <h1 class="mb-4">Our <?php $w=$_GET['id'];echo$w ?> Lineup</h1>
                 </div>
             </div>
     
@@ -50,44 +50,50 @@
             <div class="row mx-1 portfolio-container">
             <?php
                $cid=$_GET['id'];
-              $q="select * from empreg where status=1 and categoryid=".$cid;
+               
+              $q="select * from empreg where status=1 and designation='$cid'";
 
               $info=$dao->query($q);
               //print_r($info);
 
               $i=0;
-              //if(is_iterable($info)) 
-              //{
+              if(is_iterable($info)) 
+              {
               while($i<count($info))
 
-              { $s=$info[$i]["image"];
+              { $s=$info[$i]["img"];
 
   ?>
                
                 <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
                     <div class="position-relative overflow-hidden">
                         <div class="portfolio-img d-flex align-items-center justify-content-center">
-                            <img class="img-fluid" src=<?php echo BASE_URL."uploads/".$info[$i]["image"]; ?> alt="">
+                            <img class="img-fluid" src=<?php echo BASE_URL."uploads/".$info[$i]["img"]; ?> alt="">
                         </div>
                         <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
-                            <h4 class="text-white mb-4">Item Name : <?php echo $info[$i]["iname"]?></h4>
+                            <h4 class="text-white mb-4">Worker Name : <?php echo $info[$i]["ename"]?></h4>
                             <div class="d-flex align-items-center justify-content-center">
                                 
 
-                                <a class="btn btn-outline-primary m-1" href="singleitem.php?id=<?=$info[$i]["iid"]?>">
-                                <i class="fa fa-link"></i>
+                                <a class="btn btn-outline-primary m-1" href="booking.php?id=<?=$info[$i]["emp_id"]?>">
+                               <!--  <i class="fa">&#xf07a;</i>-->
+                               <button style=" background-color:#d4700d;border: none;color: gold;font-size: 16px;cursor: pointer;">BOOK</button>
                                 </a>
                                 
                             </div>
                         </div>
                     </div>
-                    <h4><?php echo $info[$i]["iname"]?></h4> </a>
+                    <h4><?php echo $info[$i]["ename"]?></h4> </a>
                 </div>
                 
                 <?php
                 $i++;
               }
-            //}
+            }
+            else{		
+                echo "<script> alert('$cid are Busy');</script>";
+ 
+            }
              ?>
              
               
