@@ -4,7 +4,7 @@
 <?php include("dbcon.php"); 
 session_start();
 ?>
-	<script type="text/javascript">
+<script type="text/javascript">
 function validations()
 {
  var  name = document.getElementById("Cname");
@@ -75,6 +75,7 @@ return false;
 <?php
 if(isset($_POST["next"]))
 {
+ echo "<Script> alert('Payment Done');</Script>";
 	
 	 header('location:printbill.php');
 	
@@ -112,7 +113,8 @@ if(isset($_POST["next"]))
           </div>
 <?php 
 //session_start();
-$amt= $_SESSION['amount'];
+$amt=$_GET['id'];
+//$amt= $_SESSION['amount'];
   $name=$_SESSION['email'] ;
 ?>
           <div class="radio-input">

@@ -13,7 +13,8 @@ function printData()
 <?php  
  //session_start();
 include("dbcon.php");
-require('../config/autoload.php');
+//require('../config/autoload.php');
+include("header2.php");
 $dao=new DataAccess();
 ?>
 <div class="row">
@@ -21,8 +22,8 @@ $dao=new DataAccess();
  <div class="table-responsive">
                                 <table border="1"  id="printTable" style="width:100%" >
                                     <thead>
-                          <center> GLAM </center>
-                           <center> SALON </center>
+                          <center> WORKERS</center>
+                           <center> WORLD </center>
                             <tr>
                              <th style="text-align:left">BillNo.1</th>
                                <th colspan="2" style="text-align:left"></th>
@@ -40,16 +41,17 @@ $dao=new DataAccess();
                                     <tbody>
                                    
  <?php
-$name=$_SESSION['email'] ;
+$uname=$_SESSION['uname'] ;
 
  
 
-$sql = "SELECT * FROM booking WHERE status=1 and username='$name'";
+$sql = "SELECT * FROM booking WHERE bstatus=1 and uname='$uname'";
 $result = $conn->query($sql);
+$r = $result->fetch_assoc();
 
-
-	
-	
+$sql = "SELECT designation FROM empreg WHERE id=".$r["emp_id"];
+$r2 = $conn->query($sql);
+$rr=$r2->fetch_assoc();
 	
 	
 
@@ -61,7 +63,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 		
 		
-      echo "<tr> <td> "  . $row["cname"]. "</td> <td>"  . $row["rate"]. "</td> <td>" . $row["rate"]. "</td>   </tr>";
+      echo "<tr> <td> "  . $rr["designation"]. "</td> <td>"  . $row["amount"]. "</td> <td>" . $row["amount"]. "</td>   </tr>";
 	  
 	    
 }
@@ -71,7 +73,7 @@ if ($result->num_rows > 0) {
  ?>
 
  <?php
- $sql123 = "select sum(rate) as t from booking where status=1 and  username='$name'";
+ $sql123 = "select sum(amount) as t from booking where bstatus=1 and  uname='$uname'";
 $result123 = $conn->query($sql123);
 	   $row = $result123->fetch_assoc();
 	   $total=$row["t"];
@@ -88,7 +90,7 @@ $result123 = $conn->query($sql123);
 
 <?php
 
-$sql11 =" UPDATE booking SET status=2 WHERE status=1 and username='$name'" ;
+$sql11 =" UPDATE booking SET bstatus=2 WHERE status=1 and uname='$uname'" ;
 
 if ($conn->query($sql11) === TRUE) {
 	echo "<script> alert('Payment Sucessfully');</script> ";

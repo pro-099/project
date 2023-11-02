@@ -1,13 +1,13 @@
 
-<?php require('../config/autoload.php'); ?>
+<?php //require('../config/autoload.php'); ?>
+<?php include('header2.php'); ?>
 
 <?php
 $dao=new DataAccess();
 
-$name=$_SESSION['email'];
+$uname=$_SESSION['uname'];
 
 ?>
-<?php include('afterlogin.php'); ?>
 
     
     <div class="container_gray_bg" id="home_feat_1">
@@ -18,23 +18,19 @@ $name=$_SESSION['email'];
                     <tr>
                         <h1><center> BOOKING VIEW</center></h1>
                         
-                        <th>srno</th>
-                     
-                      
-                        <th>Cname</th>
-                        <th>price</th>
-                       
-                       
-                        <th>bookingdate</th>
-                        <th>orderdate</th>
-                      
-                        
+                        <th>BID</th>
+                        <th>BOOKING DATE</th>
+                        <th>AMOUNT</th>
+                        <th>EMPID</th>
+                        <th>OPITIONS</th>
 
                     </tr>
 <?php
     
     $actions=array(
-        'edit'=>array('label'=>'Delete','link'=>'booking.php','params'=>array('id'=>'bid'),'attributes'=>array('class'=>'btn btn-success')),
+        'cancel'=>array('label'=>'cancel','link'=>'booking.php','params'=>array('id'=>'bid'),'attributes'=>array('class'=>'btn btn-success')),
+        'payment'=>array('label'=>'payment','link'=>'payment.php','params'=>array('id'=>'amount'),'attributes'=>array('class'=>'btn btn-success')),
+
     );
 
     $config=array(
@@ -43,11 +39,11 @@ $name=$_SESSION['email'];
 
     );
 
-    $condition=" uemail='".$name."' and status=1";
+    $condition=" uname='".$uname."' and bstatus=1";
     $join=array(
        
     ); 
-     $fields=array('bid','cname','rate','cdate','apdate');
+     $fields=array('bid','apdate','amount','emp_id');
 
     $users=$dao->selectAsTable($fields,'booking as b',$condition,NULL,$actions,$config);
     

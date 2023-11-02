@@ -44,9 +44,10 @@ $dao=new DataAccess();
 
 <?php
   $uid=$_SESSION['uid'];
+  $uname=$_SESSION['uname'];
 if(isset($_POST["btn_insert"]))
 {
-if(!isset($_SESSION['email']))
+if(!isset($_SESSION['uname']))
    {
 	   header('location:login.php');
   }
@@ -72,8 +73,11 @@ if(!isset($_SESSION['email']))
                                    
     $conn->query($sql);
     //echo $sql;
+    $sql="update empreg set status=2 where id=".$emp_id;
+    $conn->query($sql);
+    if($conn)echo "update";
     echo"<script >alert('Booking Success')</script>";
-    echo"<script >location.href = 'viewbooking.php'</script>";
+    echo"<script >location.href = 'viewbooking111.php'</script>";
 
 }
 
