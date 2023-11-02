@@ -52,27 +52,28 @@ if(!isset($_SESSION['email']))
   }
   else
   { 
-    $_SESSION['email']="abc";
+    /*$_SESSION['email']="abc";
     $uemail=$_SESSION['email'];
     $iid = $_GET['id'];
     $q="select * from category where cid=".$iid ;
-    $info1=$dao->query($q);
-    $iname=$info1[0]["cname"];
-    $price=$info1[0]["rate"];
+    $info1=$dao->query($q);*/
+    //$iname=$info1[0]["cname"];
+    //$price=$info1[0]["rate"];
  
    // $_SESSION['amount']=$totalprice;
-
+    $uname=$_SESSION['uname'];
+    $emp_id=$_GET['id'];
     $bdate=date('Y-m-d',time());
-    $orderdate=$_POST["orderdate"];
-    
-   
-    $status=1;
-    $sql = "INSERT INTO booking(username,cid,cname,rate,apdate,cdate,status) 
-    VALUES ('$uemail','$iid','$iname','$price','$orderdate','$bdate','$status')";
+    $apdate=$_POST["apdate"];
+    $amount=$_POST["amount"];
+    $bstatus=1;
+    $sql = "INSERT INTO booking(apdate,amount,emp_id,bstatus,uname) 
+    VALUES ('$apdate','$amount','$emp_id','$bstatus','$uname')";
                                    
     $conn->query($sql);
     //echo $sql;
- echo"<script >location.href = 'viewbooking.php'</script>";
+    echo"<script >alert('Booking Success')</script>";
+    echo"<script >location.href = 'viewbooking.php'</script>";
 
 }
 
@@ -122,13 +123,13 @@ if(isset($_SESSION['email']))
                 <input id="iname" name="iname" type="text" value="<?php echo $info[0]["ename"];?>"  readonly style="margin-top: 8px;"><br>
 
                 <label for="name">Enter Your Address</label><br>
-                <input value="<?=$info2[0]['address']?>" id="iname" name="add" type="text" rows="5" cols="20" style="margin-top: 8px;"><br>
+                <input value="<?=$info2[0]['address']?>" id="iname" name="add" type="text" rows="5" cols="20" readonly style="margin-top: 8px;"><br>
                 
-                <label for="name">Address</label><br>
-                <input id="iname" name="amt" type="text"  value=500 readonly style="margin-top: 8px;"><br>
+                <label for="name">Advance</label><br>
+                <input id="iname" name="amount" type="text"  value=500 readonly style="margin-top: 8px;"><br>
 
                 <label for="">Appointment Date</label><br>
-                <input id="orderdate" name="orderdate" type="date"   style="margin-top: 8px;"><br>
+                <input id="orderdate" name="apdate" type="date"   style="margin-top: 8px;"><br>
             </div>
         </div>
     </div>
