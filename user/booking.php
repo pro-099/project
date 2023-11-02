@@ -86,7 +86,7 @@ $dao=new DataAccess();
 ?>
 
 <?php	$iid=$_GET['id']; 
-	 $q="select * from category where cid=".$iid ;
+	 $q="select * from empreg where emp_id=".$iid ;
     $info=$dao->query($q);
   
 ?>
@@ -107,17 +107,17 @@ if(isset($_SESSION['email']))
 
 <?php } ?>
             <h3>Product Details</h3>
-            <img style="width:300; height:300" src=<?php echo BASE_URL."upload/".$info[0]["cimage"]; ?> alt=" " class="img-responsive" />
+            <img style="width:300; height:300" src=<?php echo BASE_URL."uploads/".$info[0]["img"]; ?> alt=" " class="img-responsive" />
         
         </div>
         <div class="content">
             <h3>Details</h3>
             <div style="display: block;">
                 <label for="name">Category Name:</label><br>
-                <input id="iname" name="iname" type="text" value="<?php echo $info[0]["cname"];?>"  readonly style="margin-top: 8px;"><br>
+                <input id="iname" name="iname" type="text" value="<?php echo $info[0]["ename"];?>"  readonly style="margin-top: 8px;"><br>
 
-                <label for="Total">Rate</label><br>
-                <input id="price" name="price" type="text" value="<?php echo $info[0]["rate"];?>"  readonly style="margin-top: 8px;"><br>
+                <!-- <label for="Total">Rate</label><br> -->
+                <!-- <input id="price" name="price" type="text" value="<?php// echo $info[0]["rate"];?>"  readonly style="margin-top: 8px;"><br> -->
             
                 
                 <label for="">Appointment Date</label><br>

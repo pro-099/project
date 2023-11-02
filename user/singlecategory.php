@@ -26,8 +26,8 @@
 
 <?php
 
-require('../config/autoload.php'); 
-//include("header.php");	
+//require('../config/autoload.php'); 
+include("header2.php");	
 include("dbcon.php");
 
 ?>
@@ -43,7 +43,7 @@ $dao=new DataAccess();
 
 
 <?php
-  $_SESSION['email']="abc";
+  $uid=$_SESSION['uid'];
 if(isset($_POST["btn_insert"]))
 {
 if(!isset($_SESSION['email']))
@@ -86,11 +86,16 @@ $dao=new DataAccess();
 ?>
 
 <?php	$iid=$_GET['id']; 
-	 $q="select * from category where cid=".$iid ;
+	 $q="select * from empreg where id=".$iid ;
     $info=$dao->query($q);
   
 ?>
  
+ <?php	$iid=$_GET['id']; 
+	 $q="select * from userreg where uid=".$uid ;
+    $info2=$dao->query($q);
+   
+?>
    
 
 <form action="" method="POST" enctype="multipart/form-data">
@@ -107,19 +112,21 @@ if(isset($_SESSION['email']))
 
 <?php } ?>
             <h3>Product Details</h3>
-            <img style="width:300; height:300" src=<?php echo BASE_URL."upload/".$info[0]["cimage"]; ?> alt=" " class="img-responsive" />
+            <img style="width:300; height:300" src="<?php echo BASE_URL."uploads/".$info[0]["img"]; ?>" alt=" " class="img-responsive" />
         
         </div>
         <div class="content">
             <h3>Details</h3>
             <div style="display: block;">
                 <label for="name">Category Name:</label><br>
-                <input id="iname" name="iname" type="text" value="<?php echo $info[0]["cname"];?>"  readonly style="margin-top: 8px;"><br>
+                <input id="iname" name="iname" type="text" value="<?php echo $info[0]["ename"];?>"  readonly style="margin-top: 8px;"><br>
 
-                <label for="Total">Rate</label><br>
-                <input id="price" name="price" type="text" value="<?php echo $info[0]["rate"];?>"  readonly style="margin-top: 8px;"><br>
-            
+                <label for="name">Enter Your Address</label><br>
+                <input value="<?=$info2[0]['address']?>" id="iname" name="add" type="text" rows="5" cols="20" style="margin-top: 8px;"><br>
                 
+                <label for="name">Address</label><br>
+                <input id="iname" name="amt" type="text"  value=500 readonly style="margin-top: 8px;"><br>
+
                 <label for="">Appointment Date</label><br>
                 <input id="orderdate" name="orderdate" type="date"   style="margin-top: 8px;"><br>
             </div>

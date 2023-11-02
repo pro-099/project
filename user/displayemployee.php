@@ -75,7 +75,7 @@
                             <div class="d-flex align-items-center justify-content-center">
                                 
 
-                                <a class="btn btn-outline-primary m-1" href="booking.php?id=<?=$info[$i]["emp_id"]?>">
+                                <a class="btn btn-outline-primary m-1" href="singlecategory.php?id=<?=$info[$i]["id"]?>">
                                <!--  <i class="fa">&#xf07a;</i>-->
                                <button style=" background-color:#d4700d;border: none;color: gold;font-size: 16px;cursor: pointer;">BOOK</button>
                                 </a>

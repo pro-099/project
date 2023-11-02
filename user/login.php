@@ -18,6 +18,7 @@ if(isset($_POST['signin']))
 		if($info=$dao->login($data,$table))
 		{
 		$_SESSION['uname']=$info['uname'];
+        $_SESSION['uid']=$info['uid'];
         echo "<script> alert('Login success');</script>";
 		header('location:index.php');
 		}
