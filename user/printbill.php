@@ -49,11 +49,13 @@ $sql = "SELECT * FROM booking WHERE bstatus=1 and uname='$uname'";
 $result = $conn->query($sql);
 $r = $result->fetch_assoc();
 
-$sql = "SELECT designation FROM empreg WHERE id=".$r["emp_id"];
+//to work this there should be atleast one bststus=1 inbooking table
+$sql = "SELECT ename FROM empreg WHERE id=".$r["emp_id"];
 $r2 = $conn->query($sql);
 $rr=$r2->fetch_assoc();
 	
-	
+$sql = "SELECT * FROM booking WHERE bstatus=1 and uname='$uname'";
+$result = $conn->query($sql);
 
 
 if ($result->num_rows > 0) {
@@ -63,7 +65,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 		
 		
-      echo "<tr> <td> "  . $rr["designation"]. "</td> <td>"  . $row["amount"]. "</td> <td>" . $row["amount"]. "</td>   </tr>";
+      echo "<tr> <td> "  . $rr["ename"]. "</td> <td>"  . $row["amount"]. "</td> <td>" . $row["amount"]. "</td>   </tr>";
 	  
 	    
 }
@@ -90,7 +92,7 @@ $result123 = $conn->query($sql123);
 
 <?php
 
-$sql11 =" UPDATE booking SET bstatus=2 WHERE status=1 and uname='$uname'" ;
+$sql11 =" UPDATE booking SET bstatus=2 WHERE bstatus=1 and uname='$uname'" ;
 
 if ($conn->query($sql11) === TRUE) {
 	echo "<script> alert('Payment Sucessfully');</script> ";

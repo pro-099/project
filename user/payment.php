@@ -98,7 +98,7 @@ if(isset($_POST["next"]))
       </div>
    <?php
 		//session_start();
-		 $name=$_SESSION['email'] ;
+		 $name=$_SESSION['uname'] ;
 		 echo $name;
 		 ?>
 
@@ -115,7 +115,7 @@ if(isset($_POST["next"]))
 //session_start();
 $amt=$_GET['id'];
 //$amt= $_SESSION['amount'];
-  $name=$_SESSION['email'] ;
+  $name=$_SESSION['uname'] ;
 ?>
           <div class="radio-input">
             <input id="card" type="radio" name="payment">
