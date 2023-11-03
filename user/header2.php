@@ -82,7 +82,7 @@ $dao=new DataAccess();
                         <a href="about.php" class="nav-item nav-link">About</a>
                         <a href="displaycategory.php" class="nav-item nav-link">Services</a>
 
-                        <a href="viewcart.php" class="nav-item nav-link">Bookings</a>
+                        <a href="viewbooking111.php" class="nav-item nav-link">Bookings</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Profile</a>
                             <div class="dropdown-menu rounded-0 m-0">

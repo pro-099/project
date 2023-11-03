@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 02, 2023 at 11:01 AM
+-- Generation Time: Nov 03, 2023 at 07:36 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `bstatus` int NOT NULL,
   `uname` varchar(35) NOT NULL,
   PRIMARY KEY (`bid`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `booking`
@@ -53,9 +53,15 @@ INSERT INTO `booking` (`bid`, `apdate`, `amount`, `emp_id`, `bstatus`, `uname`) 
 (8, '2023-11-15', 0, '27', 500, '1'),
 (9, '2023-11-15', 500, 'febin', 27, '1'),
 (10, '2023-11-16', 500, 'febin', 27, '1'),
-(11, '2023-11-16', 500, '33', 1, 'febin'),
-(12, '2023-11-16', 500, '33', 1, 'febin'),
-(13, '2023-11-29', 500, '33', 1, 'febin');
+(11, '2023-11-16', 500, '33', 2, 'febin'),
+(12, '2023-11-16', 500, '33', 2, 'febin'),
+(13, '2023-11-29', 500, '33', 2, 'febin'),
+(14, '2023-11-23', 500, '27', 2, 'febin'),
+(15, '2023-11-16', 500, '27', 2, 'febin'),
+(16, '2023-11-15', 500, '27', 2, 'febin'),
+(17, '2023-11-16', 500, '27', 2, 'febin'),
+(18, '2023-11-08', 500, '27', 2, 'febin'),
+(19, '2023-11-07', 500, '27', 2, 'febin');
 
 -- --------------------------------------------------------
 
@@ -128,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `empreg` (
 --
 
 INSERT INTO `empreg` (`id`, `emp_id`, `ename`, `ephone`, `designation`, `password`, `img`, `status`) VALUES
-(27, 'employee1@gmail.com', 'jack', '9400576285', 'elctritician', '111', '865ea1a7748987969d243e2f713c251c_6e3fe0794c2ae.avif', 1),
+(27, 'employee1@gmail.com', 'jack', '9400576285', 'elctritician', '111', '865ea1a7748987969d243e2f713c251c_6e3fe0794c2ae.avif', 2),
 (33, 'employee2@gmail.com', 'jill', '9555455635', 'elctritician', '112', 'fff253c2d678c14b800240f27416d598_98347ad1819c4.jpg', 1),
 (29, 'employee3@gmail.com', 'mohan', '9400789456', 'elctritician', '113', '8acdb6f2d306ace3eb82c355ac698452_379d2f08dee47b46519.jpg', 1),
 (30, 'employee4@gmail.com', 'david', '9400123456', 'plumbers', '114', 'd8e2f0c73678947be1b643d114764263_ad66a6d72c6c4343b.jpg', 1),

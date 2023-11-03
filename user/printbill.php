@@ -34,7 +34,7 @@ $dao=new DataAccess();
                      
                         <th>Rate</th> 
 			
-<th>Total</th>
+<!-- <th>Total</th> -->
 </tr>
                       
                                     </thead>
@@ -53,7 +53,8 @@ $r = $result->fetch_assoc();
 $sql = "SELECT ename FROM empreg WHERE id=".$r["emp_id"];
 $r2 = $conn->query($sql);
 $rr=$r2->fetch_assoc();
-	
+$ename=$rr['ename'];	
+
 $sql = "SELECT * FROM booking WHERE bstatus=1 and uname='$uname'";
 $result = $conn->query($sql);
 
@@ -65,7 +66,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 		
 		
-      echo "<tr> <td> "  . $rr["ename"]. "</td> <td>"  . $row["amount"]. "</td> <td>" . $row["amount"]. "</td>   </tr>";
+      echo "<tr> <td> "  . $rr["ename"]. "</td> <td>"  . $row["amount"]. "</td>   </tr>";
 	  
 	    
 }
@@ -80,6 +81,9 @@ $result123 = $conn->query($sql123);
 	   $row = $result123->fetch_assoc();
 	   $total=$row["t"];
 	    echo "<tr> <td colspan='3'  style='text-align:right'>Total:</td><td> ", $total, "</td></tr>";
+       $sql123 = "update empreg  set status=1 where  ename=".$ename;
+       echo "$ename";
+       $result123 = $conn->query($sql123);
 	   ?>
        
 
