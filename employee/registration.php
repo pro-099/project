@@ -128,7 +128,7 @@ echo $file->errors();
                             <div class="row">
                     <div class="col-md-6">
 
-                category image:
+                Employee image:
 
              <?= $form->fileField('img',array('class'=>'form-control')); ?>
              <?= $validator->error('img'); ?>

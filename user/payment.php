@@ -77,7 +77,8 @@ if(isset($_POST["next"]))
 {
  echo "<Script> alert('Payment Done');</Script>";
 	
-	 header('location:printbill.php');
+ $bid=$_GET['bid'];
+	 header('location:printbill.php?bid='."$bid");
 	
 	 }
 

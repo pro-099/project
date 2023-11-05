@@ -29,7 +29,7 @@ $uname=$_SESSION['uname'];
     
     $actions=array(
         'cancel'=>array('label'=>'cancel','link'=>'booking.php','params'=>array('id'=>'bid'),'attributes'=>array('class'=>'btn btn-success')),
-        'payment'=>array('label'=>'payment','link'=>'payment.php','params'=>array('id'=>'amount'),'attributes'=>array('class'=>'btn btn-success')),
+        'payment'=>array('label'=>'payment','link'=>'payment.php','params'=>array('id'=>'amount','bid'=>'bid'),'attributes'=>array('class'=>'btn btn-success')),
 
     );
 

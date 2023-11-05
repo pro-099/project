@@ -34,7 +34,6 @@ $dao=new DataAccess();
                      
                         <th>Rate</th> 
 			
-<th>Total</th>
 </tr>
                       
                                     </thead>
@@ -42,19 +41,26 @@ $dao=new DataAccess();
                                    
  <?php
 $uname=$_SESSION['uname'] ;
+$bid=$_GET['bid'] ;
 
  
 
-$sql = "SELECT * FROM booking WHERE bstatus=1 and uname='$uname'";
+$sql = "SELECT * FROM booking WHERE bstatus=1 and uname='$uname' and bid='$bid'";
 $result = $conn->query($sql);
 $r = $result->fetch_assoc();
-
+//$bid=$r['bid'];
 //to work this there should be atleast one bststus=1 inbooking table
 $sql = "SELECT ename FROM empreg WHERE id=".$r["emp_id"];
 $r2 = $conn->query($sql);
 $rr=$r2->fetch_assoc();
-	
+$ename=$rr['ename'];	
+
 $sql = "SELECT * FROM booking WHERE bstatus=1 and uname='$uname'";
+$result = $conn->query($sql);
+$r = $result->fetch_assoc();
+$bid=$r['bid'];
+
+$sql = "SELECT * FROM booking WHERE bstatus=1 and uname='$uname' and bid='$bid'";
 $result = $conn->query($sql);
 
 
@@ -65,17 +71,16 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 		
 		
-      echo "<tr> <td> "  . $rr["ename"]. "</td> <td>"  . $row["amount"]. "</td> <td>" . $row["amount"]. "</td>   </tr>";
-	  
-	    
+      echo "<tr> <td> "  . $rr["ename"]. "</td> <td>"  . $row["amount"]. "</td>    </tr>";
+	      
 }
 }
 
 
  ?>
-
+                        
  <?php
- $sql123 = "select sum(amount) as t from booking where bstatus=1 and  uname='$uname'";
+ $sql123 = "select amount as t from booking where bstatus=1 and  uname='$uname' and bid='$bid'";
 $result123 = $conn->query($sql123);
 	   $row = $result123->fetch_assoc();
 	   $total=$row["t"];
@@ -88,11 +93,13 @@ $result123 = $conn->query($sql123);
 
 </table>
 
+<?php $sql11 =" UPDATE empreg SET status=1 WHERE status=2 and ename='$ename'" ;
+$result = $conn->query($sql11);?>
 
 
 <?php
 
-$sql11 =" UPDATE booking SET bstatus=2 WHERE bstatus=1 and uname='$uname'" ;
+$sql11 =" UPDATE booking SET bstatus=2 WHERE bstatus=1 and uname='$uname' and bid='$bid'" ;
 
 if ($conn->query($sql11) === TRUE) {
 	echo "<script> alert('Payment Sucessfully');</script> ";
