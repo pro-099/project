@@ -48,11 +48,7 @@
                   <span class="availability-status online"></span>
                 </div>
                 <div class="nav-profile-text">
-<<<<<<< HEAD
-                  <p class="mb-1 text-black">jewel kj</p>
-=======
                   <p class="mb-1 text-black">David Greymaax</p>
->>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
                 </div>
               </a>
               <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
@@ -185,35 +181,21 @@
                   <!--change to offline or busy as needed-->
                 </div>
                 <div class="nav-profile-text d-flex flex-column">
-<<<<<<< HEAD
-                  <span class="font-weight-bold mb-2">jewel kj</span>
-                  <span class="text-secondary text-small">Project Manager</span>
-=======
                   <span class="font-weight-bold mb-2">Jeeson P A</span>
                   <span class="text-secondary text-small">Admin</span>
->>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
                 </div>
                 <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="verification.php">
-<<<<<<< HEAD
-                <span class="menu-title">verification</span>
-=======
                 <span class="menu-title">Verification</span>
->>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
-<<<<<<< HEAD
-              <a class="nav-link" data-toggle="collapse" href="viewemployee.php" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-title">edit category</span>
-=======
               <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-title">Basic UI Elements</span>
->>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
@@ -225,53 +207,32 @@
               </div>
             </li>
             <li class="nav-item">
-<<<<<<< HEAD
-              <a class="nav-link" href="category.php">
-                <span class="menu-title">add catrgory</span>
-=======
               <a class="nav-link" href="pages/icons/mdi.html">
                 <span class="menu-title">Icons</span>
->>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
                 <i class="mdi mdi-contacts menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pages/forms/basic_elements.html">
-<<<<<<< HEAD
-                <span class="menu-title"></span>
-=======
                 <span class="menu-title">Forms</span>
->>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pages/charts/chartjs.html">
-<<<<<<< HEAD
-                <span class="menu-title"></span>
-=======
                 <span class="menu-title">Charts</span>
->>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
                 <i class="mdi mdi-chart-bar menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pages/tables/basic-table.html">
-<<<<<<< HEAD
-                <span class="menu-title"></span>
-=======
                 <span class="menu-title">Tables</span>
->>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
                 <i class="mdi mdi-table-large menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
-<<<<<<< HEAD
-                <span class="menu-title"></span>
-=======
                 <span class="menu-title">Sample Pages</span>
->>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-medical-bag menu-icon"></i>
               </a>

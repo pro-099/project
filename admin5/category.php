@@ -72,11 +72,7 @@ echo $file->errors();
 </head>
 <body>
 
-<<<<<<< HEAD
- <form action="" method="POST" enctype="multipart/form-data">
-=======
  <form  method="POST" >
->>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
 
 <div class="row">
                     <div class="col-md-6">
