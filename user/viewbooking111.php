@@ -28,7 +28,7 @@ $uname=$_SESSION['uname'];
 <?php
     
     $actions=array(
-        'cancel'=>array('label'=>'cancel','link'=>'booking.php','params'=>array('id'=>'bid'),'attributes'=>array('class'=>'btn btn-success')),
+        'cancel'=>array('label'=>'cancel','link'=>'delete.php','params'=>array('id'=>'bid'),'attributes'=>array('class'=>'btn btn-success')),
         'payment'=>array('label'=>'payment','link'=>'payment.php','params'=>array('id'=>'amount','bid'=>'bid'),'attributes'=>array('class'=>'btn btn-success')),
 
     );
