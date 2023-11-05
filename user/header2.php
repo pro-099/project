@@ -91,7 +91,7 @@ $dao=new DataAccess();
 
                                
                                 <a href="datepaysel.php" class="dropdown-item">My Payments</a>
-                                <a href="cancelbooking.php" class="dropdown-item">Cancel Booking</a>
+                                <a href="delete.php" class="dropdown-item">Cancel Booking</a>
                                 <a href="order.php" class="dropdown-item">My Bookings</a>
                                 <a href="feedback.php" class="dropdown-item">Feedback</a>
                                 <a href="login.php" class="dropdown-item">Logout</a>
