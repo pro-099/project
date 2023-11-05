@@ -22,7 +22,7 @@ $dao=new DataAccess();
           else
           { 
           $sql = "select sum(rate)as t from booking where status=1 and  username='$name'";
-   $result = $conn->query($sql);
+   $result = $dao->query($sql);
           $row = $result->fetch_assoc();
           $total=$row["t"];
           

@@ -1,6 +1,7 @@
 <?php require('../config/autoload.php'); ?>
 <?php
 $dao=new DataAccess();
+include("dbcon.php");
 $rules=array(
 	'ename'=>array('required'=>true),
 	'password'=>array('required'=>true)
@@ -18,6 +19,7 @@ if(isset($_POST['signin']))
 		if($info=$dao->login($data,$table))
 		{
 		$_SESSION['ename']=$info['ename'];
+        $_SESSION['id']=$info['id'];
 		echo "<script> alert('Successful');</script>";
 		header('location:index.php');
 		}

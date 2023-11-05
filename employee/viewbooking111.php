@@ -5,7 +5,7 @@
 <?php
 $dao=new DataAccess();
 
-$uname=$_SESSION['ename'];
+$id=$_SESSION['id'];
 
 ?>
 
@@ -28,8 +28,7 @@ $uname=$_SESSION['ename'];
 <?php
     
     $actions=array(
-        'cancel'=>array('label'=>'cancel','link'=>'booking.php','params'=>array('id'=>'bid'),'attributes'=>array('class'=>'btn btn-success')),
-        'payment'=>array('label'=>'payment','link'=>'payment.php','params'=>array('id'=>'amount'),'attributes'=>array('class'=>'btn btn-success')),
+        'cancel'=>array('label'=>'cancel','link'=>'delete.php','params'=>array('id'=>'bid'),'attributes'=>array('class'=>'btn btn-success')),
 
     );
 
@@ -39,7 +38,7 @@ $uname=$_SESSION['ename'];
 
     );
 
-    $condition=" ename='".$ename."' and bstatus=1";
+    $condition=" emp_id='".$id."' and bstatus=1";
     $join=array(
        
     ); 

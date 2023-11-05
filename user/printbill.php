@@ -71,14 +71,9 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 		
 		
-<<<<<<< HEAD
-      echo "<tr> <td> "  . $rr["ename"]. "</td> <td>"  . $row["amount"]. "</td>    </tr>";
-	      
-=======
       echo "<tr> <td> "  . $rr["ename"]. "</td> <td>"  . $row["amount"]. "</td>   </tr>";
 	  
 	    
->>>>>>> d7681ceaa36396416286a63dede3f961a42fb4b3
 }
 }
 
