@@ -169,10 +169,10 @@
 
 
 
-        <div class="row mx-1 portfolio-container">
+       <!-- <div class="row mx-1 portfolio-container">
             <?php
 
-            $q = "select * from category ";
+           /* $q = "select * from category ";
 
             $info = $dao->query($q);
             //print_r($info);
@@ -205,14 +205,14 @@
 
             <?php
                 $i++;
-            }
+            }*/
             ?>
 
 
         </div>
     </div>
 
-</div>
+</div>->
 
 
 
