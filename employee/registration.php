@@ -53,7 +53,8 @@ $data=array(
   
     if($dao->insert($data,"empreg"))
     {
-        echo "<script> alert('New record created successfully');</script> ";
+        echo "<script> alert('REgistration Successfully');</script>";
+        header('location:index.php');
 
     }
     else

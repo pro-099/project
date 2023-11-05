@@ -5,7 +5,7 @@
 <?php
 $dao=new DataAccess();
 
-$uname=$_SESSION['uname'];
+$uname=$_SESSION['ename'];
 
 ?>
 
@@ -39,7 +39,7 @@ $uname=$_SESSION['uname'];
 
     );
 
-    $condition=" uname='".$uname."' and bstatus=1";
+    $condition=" ename='".$ename."' and bstatus=1";
     $join=array(
        
     ); 
