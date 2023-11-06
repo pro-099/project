@@ -13,5 +13,6 @@ if (isset($_SESSION['ename'])) {
 } else {
     // If the user is not logged in, you can handle it as you see fit, such as showing a message.
     echo "<script>alert('Not Loged In'); </script>";
+    header("Location: login.php"); 
 }
 ?>
