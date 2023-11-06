@@ -1,8 +1,4 @@
 
-<<<<<<< HEAD
-=======
-
->>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
 <?php require('../config/autoload.php'); ?>
 
 <?php
@@ -22,55 +18,34 @@ $dao=new DataAccess();
                     <tr>
                         
                         <th>Id</th>
-<<<<<<< HEAD
-                        <th>category name</th>                        
-                        <th>EDIT/DELETE</th>
-                     
-=======
+                        <th>Email</th>
                         <th>Employee name</th>
-                        <th>Employee age</th>
-                        <th>EDIT/DELETE</th>
+                        <th>Designation</th>
                         <th>Verify Employee</th>
->>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
                       
                     </tr>
 <?php
     
     $actions=array(
-    'edit'=>array('label'=>'Edit','link'=>'edit.php','params'=>array('id'=>'category_id'),'attributes'=>array('class'=>'btn btn-success')),
+    'verify'=>array('label'=>'Verify','link'=>'update.php','params'=>array('id'=>'id'),'attributes'=>array('class'=>'btn btn-success')),
     
-<<<<<<< HEAD
-    'delete'=>array('label'=>'Delete','link'=>'editing.php','params'=>array('id'=>'category_id'),'attributes'=>array('class'=>'btn btn-success'))
-=======
-    'delete'=>array('label'=>'Delete','link'=>'edit.php','params'=>array('id'=>'category_id'),'attributes'=>array('class'=>'btn btn-success'))
->>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
     
     );
 
     $config=array(
         'srno'=>true,
-<<<<<<< HEAD
-        'hiddenfields'=>array('category_id'),
-=======
-        'hiddenfields'=>array('eid'),
->>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
+        'hiddenfields'=>array('id'),
         
         
     );
+    
+    $condition=" status=0";
+    $join=array(
+       
+    ); 
+     $fields=array('id','emp_id','ename','designation');
 
-   
-   $join=array(
-        
-    );
-<<<<<<< HEAD
-     $fields=array('category_id','category_name');
-
-    $users=$dao->selectAsTable($fields,'category',"status=1",$join,$actions,$config);
-=======
-     $fields=array('eid','ename');
-
-    $users=$dao->selectAsTable($fields,'employee',1,$join,$actions,$config);
->>>>>>> d495063f46927161c055ca3616f5cecaecaba11c
+    $users=$dao->selectAsTable($fields,'empreg as b',$condition,NULL,$actions,$config);
     
     echo $users;
                     
