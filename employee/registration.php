@@ -45,7 +45,7 @@ $data=array(
     'designation'=>$_POST['designation'],
     'password'=>$_POST['password'],
     'img'=>$fileName,
-     'status'=>1   
+     'status'=>0   
          
     );
 
