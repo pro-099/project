@@ -3,7 +3,7 @@
 session_start();
 
 // Check if the user is already logged in
-if (isset($_SESSION['user_id'])) {
+if (isset($_SESSION['uname'])) {
     // If they are logged in, destroy the session data
     session_destroy();
     
