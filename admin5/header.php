@@ -199,6 +199,12 @@
                 <span class="menu-title">Verification</span>
               </a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="verification.php">
+                <span class="menu-title">Employee Details</span>
+              </a>
+            </li>
             
 
                 <div class="mt-4">
