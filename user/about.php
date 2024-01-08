@@ -99,7 +99,7 @@
                         <div class="col-sm-6">
                             <div class="d-flex align-items-center mb-4">
                                 
-                                <h5 class="text-truncate m-0">All India Delivery</h5>
+                                <h5 class="text-truncate m-0">All India Service</h5>
                             </div>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
             <div class="row">
                 <div class="col-lg-7 mt-5 py-5 pr-lg-5">
                     <h6 class="text-primary font-weight-normal text-uppercase mb-3">Why Choose Us?</h6>
-                    <h1 class="mb-4 section-title">25+ Years Experience In The Jewellery Compliments Industry</h1>
+                    <h1 class="mb-4 section-title">25+ Years Experience In The Every Works Compliments Industry</h1>
                     <p class="mb-4">We at EMMA's Polymers ensures our customers the finest quality products at the most effective prices and customer satisfaction is our companys prime concern.</p>
                     <ul class="list-inline">
                         <li><h5><i class="far fa-check-square text-primary mr-3"></i>25+ Years Experience</h5></li>
